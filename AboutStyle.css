@@ -1,0 +1,280 @@
+﻿@font-face {
+    font-family: 'BenguiatStd-Bold';
+    src: url('Content/BenguiatStd-Bold.otf') format('opentype');
+}
+body {
+    font-family: 'BenguiatStd-Bold';
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('Content/images/qt3325.jpg');
+   
+    font-family: 'BenguiatStd-Bold';
+}
+
+/*title styling*/
+
+.logo {
+    margin-left:15px;
+    margin-top:125px;
+    margin-bottom: 25px;
+    font: 65px 'BenguiatStd-Bold';
+    ; /* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
+    color: #fefefe;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+}
+
+    /* stuff for both words */
+    .logo span {
+        position: relative;
+    }
+
+        .logo span:before,
+        .logo span:after {
+            content: '';
+            position: absolute;
+            border-width: 32px; /* makes a nice, big 64px square */
+            border-style: solid;
+            border-color: transparent;
+            height: 0;
+            z-index: 10;
+        }
+
+    /* stuff for 1st word */
+    .logo .word1 {
+        color: #dc006c;
+        margin-right: -38px;
+        transform: rotateY(180deg); /* using Prefix free */
+        display: inline-block; /* required for transform */
+        z-index: 10; /* stack 1st word on top */
+    }
+
+        .logo .word1:before {
+            right: -4px; /* would be left, but we flipped the word */
+            top: -9px;
+            border-top-color: #282828; /* match background color */
+            border-right-color: #282828; /* would be left, but we flipped the word */
+        }
+
+        .logo .word1:after {
+            left: 17px; /* would be right, but we flipped the word */
+            bottom: -15px;
+            border-bottom-color: #282828;
+            border-left-color: #282828; /* would be right, but we flipped the word */
+        }
+
+    /* stuff for 2nd word */
+    .logo .word2 {
+        z-index: 0; /* stack 2nd word below */
+    }
+
+        .logo .word2:before {
+            left: -4px;
+            top: -6px;
+            border-top-color: #282828;
+            border-left-color: #282828;
+        }
+
+        .logo .word2:after {
+            right: -4px;
+            bottom: 4px;
+            border-bottom-color: #282828;
+            border-right-color: #282828;
+        }
+
+
+
+
+
+/*styling for the filter cards*/
+.filterDiv {
+    float: left;
+    background-color: black;
+    color: #ffffff;
+    width: 150px;
+    line-height: 150px;
+    text-align: center;
+    margin: 2px;
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+.container {
+   
+float:left;
+margin-top: 20px;
+   
+}
+
+/* Style the buttons */
+.btn {
+    margin-left:15px;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: #ddd;
+    }
+
+    .btn.active {
+        background-color: #666;
+        color: white;
+    }
+
+
+/*styling for better overlay*/
+
+.container {
+    clear: both;
+    margin: 0 auto;
+    max-width: 1050px;
+}
+
+.filterDiv {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin: 5px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+    .filterDiv p {
+        opacity: 0;
+        transition: .2s;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-transform: uppercase;
+        margin: 0;
+        text-align: center;
+        line-height: 200px;
+        font-size:15px;
+        display:flex;
+        justify-content:center;
+    }
+
+    .filterDiv:after, .filterDiv:before {
+        opacity: 0;
+        transition: .2s;
+        content: "";
+        background-image: inherit;
+        background-size: inherit;
+        background-position: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-filter: blur(90px) saturate(4);
+        filter: blur(90px) saturate(4);
+    }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .filterDiv:after, .filterDiv:before {
+        background-image: none;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.filterDiv:hover p, .filterDiv:hover:after, .filterDiv:hover:before {
+    opacity: 1;
+}
+
+.hover .filterDiv p, .hover .filterDiv:after, .hover .filterDiv:before {
+    opacity: 1;
+}
+
+#whitedressshirt {
+    background-image: url('Content/images/PF325.jpg');
+}
+#blackcoat {
+    background-image: url('Content/images/VVJW325.jpeg');
+}
+#yellowjacket {
+    background-image: url('Content/images/KBjacket325.jpg');
+}
+#suedejacket {
+    background-image: url('Content/images/butch325.jpg');
+}
+#UCshirt {
+    background-image: url('Content/images/UC325.jpg');
+}
+#whiteshirt {
+    background-image: url('Content/images/butcht325.jpg');
+}
+#bluesuit {
+    background-image: url('Content/images/bluesuit.jpg');
+}
+#blazer {
+    background-image: url('Content/images/leo325.jpg');
+}
+#whitecoat {
+    background-image: url('Content/images/nurse325.gif');
+}
+#nurse {
+    background-image: url('Content/images/nurse2325.jpg');
+}
+#yellowpants {
+    background-image: url('Content/images/KBpant325.jpg');
+}
+#mensjeans {
+    background-image: url('Content/images/butchjean325.jpg');
+}
+#blueshorts {
+    background-image: url('Content/images/blue325.jpg');
+}
+#blackpants {
+    background-image: url('Content/images/RD325.jpg');
+}
+#yellowshoe {
+    background-image: url('Content/images/kb325.jpg');
+}
+#whiteshoe {
+    background-image: url('Content/images/butchjean325.jpg');
+}
+#blackshoe {
+    background-image: url('Content/images/rdshoe325.jpg');
+}
+#boot {
+    background-image: url('Content/images/boot325.jpg');
+}
+#nurseshoe {
+    background-image: url('Content/images/nurseshoe.jpg');
+}
+#sunglasses {
+    background-image: url('Content/sunglasses325.gif');
+}
+#bolo {
+    background-image: url('Content/images/bolo325.jpg');
+}
+#eyepatch {
+    background-image: url('Content/patch325.jpg');
+}
+#cowboyhat {
+    background-image: url('Content/images/django325.jpg');
+}
+#blacktie {
+    background-image: url('Content/images/RD325.jpg');
+}
+#sword {
+    
+    background-image: url('Content/sword325.jpg');
+}
+#cigarette {
+    background-image: url('Content/smoking325.gif');
+    
+}
